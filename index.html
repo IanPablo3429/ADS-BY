@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Textly Chat App</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google AdSense Script (for website ads) -->
+  <script data-ad-client="ca-pub-8705115118000461" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- Firebase Initialization Script -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAfsrEvRLqyqaPD9ypBx314u71i2J1SsHE",
+      authDomain: "textly-c9cbb.firebaseapp.com",
+      projectId: "textly-c9cbb",
+      storageBucket: "textly-c9cbb.firebasestorage.app",
+      messagingSenderId: "130520832234",
+      appId: "1:130520832234:web:10fd9319e46111cb39df93",
+      measurementId: "G-172YKCM75W"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    // (Other Firebase services like Auth will be imported in script.js)
+  </script>
+</head>
+<body>
+  <!-- Authentication Section -->
+  <div id="authContainer" class="auth-container">
+    <div class="tabs">
+      <button id="loginTab" class="active">Login</button>
+      <button id="signupTab">Sign Up</button>
+    </div>
+    <!-- Login Form -->
+    <div id="loginFormContainer">
+      <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="Email" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <div class="social-login">
+        <p>Or login with</p>
+        <button class="social-btn" data-provider="Google">Google</button>
+        <button class="social-btn" data-provider="Facebook">Facebook</button>
+        <button class="social-btn" data-provider="Twitter">Twitter</button>
+        <button class="social-btn" data-provider="Phone">Phone</button>
+      </div>
+    </div>
+    <!-- Sign Up Form -->
+    <div id="signupFormContainer" style="display: none;">
+      <form id="signupForm">
+        <input type="text" id="signupUsername" placeholder="Email" required />
+        <input type="password" id="signupPassword" placeholder="Password" required />
+        <input type="text" id="signupPhone" placeholder="Phone Number (optional)" />
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="social-login">
+        <p>Or sign up with</p>
+        <button class="social-btn" data-provider="Google">Google</button>
+        <button class="social-btn" data-provider="Facebook">Facebook</button>
+        <button class="social-btn" data-provider="Twitter">Twitter</button>
+        <button class="social-btn" data-provider="Phone">Phone</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Section -->
+  <div id="chatSection" class="chat-container" style="display: none;">
+    <!-- Sidebar -->
+    <div class="chat-sidebar">
+      <div class="sidebar-header">
+        <h3>Textlyy</h3>
+        <input type="text" id="userSearch" placeholder="Search users..." />
+        <button id="newChatBtn">New Chat</button>
+        <button id="newGroupBtn">New Group Chat</button>
+        <!-- Optional: Status/Stories button -->
+        <button id="statusSidebarBtn">Status/Stories</button>
+      </div>
+      <div class="conversation-list" id="conversationList">
+        <!-- Conversation list will be dynamically populated -->
+      </div>
+    </div>
+    <!-- Main Chat & Status Area -->
+    <div class="chat-main">
+      <div class="chat-header">
+        <span class="app-title" id="conversationTitle">Select a conversation</span>
+        <button id="logout-btn">Logout</button>
+      </div>
+      <!-- Optional Admin Controls -->
+      <div id="adminControls" style="display: none;">
+        <button id="addMemberBtn">Add Member</button>
+        <button id="removeMemberBtn">Remove Member</button>
+      </div>
+      <!-- Chat Messages View -->
+      <div id="chatMessages" class="chat-messages"></div>
+      <!-- Optional Status View -->
+      <div id="statusContainer" class="status-container" style="display: none;">
+        <button id="addStatusBtn" class="story-upload-btn" title="Add Story">Add Story</button>
+        <div id="statusList"></div>
+      </div>
+      <!-- Chat Input Area -->
+      <div id="chatInputArea" class="chat-input">
+        <button id="imageUploadBtn" class="image-upload-btn" title="Send Image">📷</button>
+        <button id="videoUploadBtn" class="video-upload-btn" title="Send Video">📹</button>
+        <button id="documentUploadBtn" class="document-upload-btn" title="Send Document">📄</button>
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button id="sendButton">Send</button>
+        <!-- Hidden file inputs -->
+        <input type="file" id="imageInput" accept="image/*" style="display: none;" />
+        <input type="file" id="videoInput" accept="video/*" style="display: none;" />
+        <input type="file" id="documentInput" accept=".pdf,.doc,.docx" style="display: none;" />
+        <!-- Hidden file input for status stories -->
+        <input type="file" id="statusInput" accept="image/*,video/*" style="display: none;" />
+      </div>
+    </div>
+  </div>
+  
+  <!-- Ad Container: Banner Ad -->
+  <div class="ad-container">
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="ca-pub-8705115118000461"
+         data-ad-slot="6694939277"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  
+  <!-- Load your main script AFTER Firebase is initialized -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>

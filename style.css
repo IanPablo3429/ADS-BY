@@ -1,0 +1,316 @@
+/* ===== Base Styles ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* Digital gradient background */
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ad Container (for banner ads) */
+.ad-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 5px 0;
+}
+
+/* Authentication Container */
+.auth-container {
+  width: 400px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+.tabs button:hover {
+  background: rgba(255,255,255,0.3);
+}
+.tabs button.active {
+  background: #007AFF;
+}
+
+/* Form Styles */
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.auth-container form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  outline: none;
+}
+.auth-container form button {
+  padding: 12px;
+  border: none;
+  background: #007AFF;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.auth-container form button:hover {
+  background: #005bb5;
+}
+
+/* Social Login */
+.social-login {
+  margin-top: 20px;
+  color: #fff;
+}
+.social-login p {
+  margin-bottom: 10px;
+}
+.social-btn {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+}
+.social-btn[data-provider="Google"] { background: #DB4437; }
+.social-btn[data-provider="Facebook"] { background: #3B5998; }
+.social-btn[data-provider="Twitter"] { background: #1DA1F2; }
+.social-btn[data-provider="Phone"] { background: #34A853; }
+
+/* ===== Chat Container Styles ===== */
+.chat-container {
+  width: 800px;
+  height: 600px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Sidebar */
+.chat-sidebar {
+  width: 250px;
+  background: rgba(255,255,255,0.15);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  backdrop-filter: blur(10px);
+}
+.sidebar-header h3 {
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 500;
+  color: #fff;
+}
+.sidebar-header input {
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  outline: none;
+}
+.sidebar-header button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 5px;
+  border: none;
+  background: #007AFF;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+.sidebar-header button:hover {
+  opacity: 0.8;
+}
+.conversation-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+.conversation-item {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.conversation-item:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Chat Main Window */
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.chat-main .chat-header {
+  background: linear-gradient(135deg, #e94560, #f07b3f);
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px rgba(255,255,255,0.7);
+}
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: url('https://www.transparenttextures.com/patterns/diagmonds.png'), #f9f9f9;
+}
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: rgba(255,255,255,0.15);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+}
+.chat-input input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 16px;
+  margin: 0 10px;
+  outline: none;
+  color: #333;
+}
+.chat-input button {
+  border: none;
+  background: #007AFF;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+.chat-input button:hover {
+  background: #005bb5;
+}
+
+/* Attachment Buttons */
+.image-upload-btn,
+#attachButton,
+.video-upload-btn,
+.document-upload-btn,
+.story-upload-btn {
+  background: #4a90e2;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.image-upload-btn:hover,
+#attachButton:hover,
+.video-upload-btn:hover,
+.document-upload-btn:hover,
+.story-upload-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Message Bubbles */
+.message {
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 15px;
+  max-width: 70%;
+  display: inline-block;
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.message.sent {
+  align-self: flex-end;
+  background: #dcf8c6;
+  color: #000;
+  margin-right: 10px;
+}
+.message.received {
+  align-self: flex-start;
+  background: #f0f0f0;
+  border: 1px solid #007AFF;
+  color: #000;
+  margin-left: 10px;
+}
+.message img, .message video {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Timestamp Styling */
+.timestamp {
+  font-size: 10px;
+  color: #666;
+  margin-top: 2px;
+  text-align: right;
+}
+
+/* ===== New Digital/Gen Z Styles ===== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+button, .social-btn {
+  font-family: 'Orbitron', sans-serif;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+button:hover, .social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255,255,255,0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .chat-container {
+    width: 100%;
+    height: 100vh;
+  }
+}
